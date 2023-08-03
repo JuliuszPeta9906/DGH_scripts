@@ -1,50 +1,33 @@
 import fs from "fs";
 
-const MAX_LENGTH = 80;
-const FIXED = "fixed";
-const DATE_REGEX = /(0?[1-9]|1[0-2])\.(19|20)\d{2}/;
-const DETACHABLE = "detachable";
-const SHORTENED_DETACHABLE = "det.";
-const VAUXHALL = "Vauxhall";
-const OPEL_VAUXHALL = "Opel / " + VAUXHALL;
-const TOWBAR = "towbar";
-const CAR_BODY_TYPES = {
-  "Touring Sports": "TS",
-  "Station Wagon": "SW",
-  Liftback: "LB",
-  Sedan: "Sedan",
-  Hatchback: "HB",
-  SUV: "SUV",
-  Coupe: "Coupe",
-  Convertible: "CV",
-  Wagon: "Wagon",
-  "Pickup Truck": "Pickup",
-  Minivan: "Minivan",
-  Crossover: "CO",
-  Roadster: "RS",
-  MPV: "MPV",
-  "Coupe-SUV": "C-SUV",
-  Saloon: "SL",
-  Furgon: "FG",
-  Minibus: "MB",
-} as const;
-const THIRTEEN_PIN = "13-pin";
-const SEVEN_PIN = "7-pin";
-const THIRTEEN_PIN_SHORTENED = "13-p";
-const SEVEN_PIN_SHORTENED = "7-p";
-const DOORS = "doors";
-const MERCEDES_BENZ = "Mercedes-Benz";
-const MERCEDES = "Mercedes";
-const VOLKSWAGEN = "Volkswagen";
-const VOLKSWAGEN_SHORT = "VW";
-const PICKUP = "Pick Up";
-const MUSSO_GRAND = "(Musso Grand)";
-const PEUGOT_LS = ["L1 L2 L3 L4", "L1 L2 L3"] as const;
-const PEUGOT_LS_SHORT = ["L1-L4", "L1-L3"] as const;
-const LAND_ROVER = "Land Rover Range Rover";
-const LAND_ROVER_SHORT = "Land Rover Range";
-const ESTATE = "Estate";
-const ESTATE_SHORT = "Es.";
+import {
+  MAX_LENGTH,
+  FIXED,
+  DATE_REGEX,
+  DETACHABLE,
+  SHORTENED_DETACHABLE,
+  VAUXHALL,
+  OPEL_VAUXHALL,
+  TOWBAR,
+  CAR_BODY_TYPES,
+  THIRTEEN_PIN,
+  SEVEN_PIN,
+  THIRTEEN_PIN_SHORTENED,
+  SEVEN_PIN_SHORTENED,
+  DOORS,
+  MERCEDES_BENZ,
+  MERCEDES,
+  VOLKSWAGEN,
+  VOLKSWAGEN_SHORT,
+  PICKUP,
+  MUSSO_GRAND,
+  PEUGOT_LS,
+  PEUGOT_LS_SHORT,
+  LAND_ROVER,
+  LAND_ROVER_SHORT,
+  ESTATE,
+  ESTATE_SHORT,
+} from "./constants";
 
 function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
@@ -233,4 +216,3 @@ const output = lines.map((line) => {
 // For writing
 fs.writeFileSync("./output.txt", output.join("\n"));
 
-// =CONCAT("New Complete ";AN2;" towbar for ";O2;" ";P2;" ";Q2;IF(AV2<>"";CONCAT(" + ";"univ. ";AV2;" el. kit");""))

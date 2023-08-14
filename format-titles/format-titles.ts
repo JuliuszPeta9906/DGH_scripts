@@ -33,7 +33,7 @@ function capitalize(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
-const lines = fs.readFileSync("input.txt", "utf8").split(/\r?\n/);
+const lines = fs.readFileSync("format-titles/input.txt", "utf8").split(/\r?\n/);
 
 const output = lines.map((line) => {
   let formattedLine = line.split(" ");
@@ -214,5 +214,4 @@ const output = lines.map((line) => {
 // );
 
 // For writing
-fs.writeFileSync("./output.txt", output.join("\n"));
-
+fs.writeFileSync("format-titles/output.txt", output.join("\n"));

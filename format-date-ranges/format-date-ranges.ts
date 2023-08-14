@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const lines: string[] = fs.readFileSync("input.txt", "utf8").split(/\r?\n/);
+const lines: string[] = fs.readFileSync("format-date-ranges/input.txt", "utf8").split(/\r?\n/);
 const expression = "-$";
 const regex = new RegExp(expression, "ig");
 
@@ -14,4 +14,4 @@ const newLines = lines.map((line) => {
   return line;
 });
 
-fs.writeFileSync("output.txt", newLines.join("\n"), "utf8");
+fs.writeFileSync("format-date-ranges/output.txt", newLines.join("\n"), "utf8");
